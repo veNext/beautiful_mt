@@ -108,7 +108,7 @@ minetest.override_item('default:grass_1', {
 minetest.register_abm({
     nodenames = {"default:leaves"},
    neighbors = {"default:air"},
-    interval = 50.0,
+    interval = 50,
     chance = 50,
     action = function(pos)
         minetest.add_particle({ 	
@@ -343,3 +343,17 @@ minetest.register_abm({
 })
 
 
+minetest.override_item('default:dirt_with_grass', {
+    drawtype = "nodebox",
+    node_box = {
+        type = "fixed",
+        fixed = {
+            {-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+            {-0.5, 0.5, -0.5, -0.2, 0.550, -0.2},
+            {0.5, 0.5, -0.5, 0.2, 0.550, -0.2},
+            {0.5, 0.5, 0.5, 0.2, 0.550, 0.2},
+            {-0.5, 0.5, 0.5, -0.2, 0.550, 0.2},
+            {-0.2, 0.5, 0.2, 0.2, 0.550, - 0.2},
+        },
+    }
+})
